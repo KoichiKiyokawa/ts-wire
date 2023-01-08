@@ -1,4 +1,5 @@
 # ts-wire
+[![CI](https://github.com/KoichiKiyokawa/ts-wire/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/KoichiKiyokawa/ts-wire/actions/workflows/ci.yml)
 
 ## Features
 
