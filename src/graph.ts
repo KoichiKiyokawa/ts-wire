@@ -1,11 +1,5 @@
-import {
-  Identifier,
-  OptionalKind,
-  SyntaxKind,
-  ts,
-  VariableDeclarationStructure,
-} from "ts-morph"
-import { camelize } from "./utils"
+import { Identifier, OptionalKind, SyntaxKind, ts, VariableDeclarationStructure } from 'ts-morph'
+import { camelize } from './utils'
 
 class ProviderPreprocessor {
   constructor(private readonly identifier: Identifier) {}
@@ -52,19 +46,17 @@ export class DependencyGraph {
     // ----------------------
     // setup dependencies
     for (let i = 0; i < providerIdentifiers.length; i++) {
-      new ProviderPreprocessor(providerIdentifiers[i])
-        .getDependencyIdentifiers()
-        .forEach((d) => {
-          const applicableProviderIndex = providerIdentifiers.findIndex(
-            (p) => p.getType().getSymbol() === d.getType().getSymbol()
+      new ProviderPreprocessor(providerIdentifiers[i]).getDependencyIdentifiers().forEach((d) => {
+        const applicableProviderIndex = providerIdentifiers.findIndex(
+          (p) => p.getType().getSymbol() === d.getType().getSymbol()
+        )
+        if (applicableProviderIndex === -1) {
+          throw new Error(
+            `${d.getText()} is in providers, but it's dependencies are not in providers`
           )
-          if (applicableProviderIndex === -1) {
-            throw new Error(
-              `${d.getText()} is in providers, but it's dependencies are not in providers`
-            )
-          }
-          this.nodes[i].addDependency(this.nodes[applicableProviderIndex])
-        })
+        }
+        this.nodes[i].addDependency(this.nodes[applicableProviderIndex])
+      })
     }
     // ----------------------
 
@@ -87,9 +79,7 @@ export class DependencyGraph {
 
         if (node.dependencies.length === 0) {
           node.initializeCost = 0
-        } else if (
-          node.dependencies.some((dep) => dep.initializeCost === undefined)
-        ) {
+        } else if (node.dependencies.some((dep) => dep.initializeCost === undefined)) {
           // we cannot evaluate initializeCost of this node yet, so go to next node
           return
         } else {
@@ -108,7 +98,7 @@ export class DependencyGraph {
           `Circular dependency detected: ${this.nodes
             .filter((node) => node.initializeCost === undefined)
             .map((node) => node.providerIdentifier.getText())
-            .join(", ")}`
+            .join(', ')}`
         )
       }
       prevEvaluatedNodeCount = evaluatedNodeCount
@@ -129,7 +119,7 @@ export class DependencyGraph {
   private getNodesSortedByInitializeCost() {
     return this.nodes.sort((a, b) => {
       if (a.initializeCost === undefined || b.initializeCost === undefined)
-        throw new Error("initializeCost is not evaluated")
+        throw new Error('initializeCost is not evaluated')
 
       return a.initializeCost - b.initializeCost
     })
@@ -137,7 +127,7 @@ export class DependencyGraph {
 }
 
 class DependencyGraphNode {
-  kind: "class" | "function" | "value"
+  kind: 'class' | 'function' | 'value'
   dependencies: DependencyGraphNode[] = []
   initializeCost: number | undefined = undefined
   usedCount = 0
@@ -145,13 +135,13 @@ class DependencyGraphNode {
   constructor(public readonly providerIdentifier: Identifier) {
     switch (new ProviderPreprocessor(providerIdentifier).getDefinitionKind()) {
       case ts.ScriptElementKind.classElement:
-        this.kind = "class"
+        this.kind = 'class'
         break
       case ts.ScriptElementKind.functionElement:
-        this.kind = "function"
+        this.kind = 'function'
         break
       default:
-        this.kind = "value"
+        this.kind = 'value'
     }
   }
 
@@ -160,19 +150,18 @@ class DependencyGraphNode {
   }
 
   getName() {
-    if (this.kind === "class")
-      return camelize(this.providerIdentifier.getText())
+    if (this.kind === 'class') return camelize(this.providerIdentifier.getText())
 
     return this.providerIdentifier.getText()
   }
 
   getInitializeStatement(): OptionalKind<VariableDeclarationStructure> | null {
-    if (this.kind === "function" || this.kind === "value") return null
+    if (this.kind === 'function' || this.kind === 'value') return null
     return {
       name: this.getName(),
       initializer: `new ${this.providerIdentifier.getText()}(${this.dependencies
         .map((d) => d.getName())
-        .join(", ")})`,
+        .join(', ')})`,
     }
   }
 }
