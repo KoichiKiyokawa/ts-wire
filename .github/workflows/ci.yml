@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '*.md'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '*.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 17.x, 18.x]
+    steps:
+      - uses: actions/checkout@v3
+      - run: corepack enable pnpm
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3.4.1
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: install dependencies
+        run: pnpm install
+      - name: type check
+        run: pnpm tsc --noEmit
+      - name: lint
+        run: pnpm run lint:ci
+      # - name: build check
+      #   run: pnpm build
+      # - name: test
+      #   run: pnpm test
+      # - uses: codecov/codecov-action@v3.1.0
