@@ -13,3 +13,6 @@ https://user-images.githubusercontent.com/40315079/211189731-7b5e876d-8b0c-4d5b-
 - [ ] Publish npm
 - [ ] Tests
 - [ ] Lint, Format
+
+## Acknowledgments 
+This library is inspired by https://github.com/google/wire
