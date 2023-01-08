@@ -1,7 +1,7 @@
 {
   "name": "ts-wire",
   "version": "0.0.1",
-  "description": "",
+  "description": "TODO",
   "main": "index.js",
   "scripts": {
     "ts-wire": "tsx src/index.ts",
@@ -12,8 +12,11 @@
   "license": "ISC",
   "private": true,
   "packageManager": "pnpm@7.22.0",
-  "devDependencies": {
+  "dependencies": {
     "ts-morph": "17.0.1",
+    "yargs": "17.6.2"
+  },
+  "devDependencies": {
     "tsx": "3.12.1"
   }
 }
