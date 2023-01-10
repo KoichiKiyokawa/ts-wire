@@ -1,10 +1,7 @@
 #! /usr/bin/env node
 
-/* eslint-disable @typescript-eslint/no-var-requires */
-
 import yargs from 'yargs/yargs'
 import { run } from './run'
-import fs from 'fs'
 
 const wireTsTemplate = `// example: export const providers = [FooRepository, FooService, FooController]
 export const providers = []`
@@ -18,18 +15,20 @@ yargs(process.argv.slice(2))
       path: { alias: 'p', description: 'Path to the creating file', default: 'src/wire.ts' },
     },
     async (argv) => {
+      const fs = await import('fs')
       if (fs.existsSync(argv.path)) {
-        const readline = require('readline').createInterface({
+        const readline = await import('readline')
+        const rl = readline.createInterface({
           input: process.stdin,
           output: process.stdout,
         })
 
         const answer = await new Promise((resolve) => {
-          readline.question(
+          rl.question(
             `\n  ${argv.path} already exists. Do you want to overwrite? [y/N]`,
-            (answer: string) => {
+            (answer) => {
               resolve(answer)
-              readline.close()
+              rl.close()
             }
           )
         })
@@ -55,8 +54,8 @@ yargs(process.argv.slice(2))
         default: 'src/wire-generated.ts',
       },
     },
-    (argv) => {
-      const { performance } = require('perf_hooks')
+    async (argv) => {
+      const { performance } = await import('perf_hooks')
       const start = performance.now()
       run({ tsConfigFilePath: argv.config, inputFilePath: argv.input, outputFilePath: argv.output })
       const end = performance.now()
