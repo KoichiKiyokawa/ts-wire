@@ -2,8 +2,9 @@
   "name": "ts-wire",
   "version": "0.0.1",
   "description": "TODO",
-  "main": "index.js",
+  "bin": "dist/cli.js",
   "scripts": {
+    "build": "rm -rf && tsc",
     "ts-wire": "tsx src/index.ts",
     "lint": "prettier --write . && eslint --fix . --ignore-path .gitignore",
     "lint:ci": "prettier --check . && eslint . --ignore-path .gitignore",
@@ -19,6 +20,8 @@
     "yargs": "17.6.2"
   },
   "devDependencies": {
+    "@types/node": "18.11.18",
+    "@types/yargs": "17.0.19",
     "@typescript-eslint/eslint-plugin": "5.48.0",
     "@typescript-eslint/parser": "5.48.0",
     "eslint": "8.31.0",
