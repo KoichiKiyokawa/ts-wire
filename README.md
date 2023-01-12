@@ -1,6 +1,7 @@
 # ts-wire
 
 [![CI](https://github.com/KoichiKiyokawa/ts-wire/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/KoichiKiyokawa/ts-wire/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/github/KoichiKiyokawa/ts-wire/branch/main/graph/badge.svg?token=MHOGB70JUD)](https://codecov.io/github/KoichiKiyokawa/ts-wire)
 
 ## Features
 
@@ -14,7 +15,6 @@ https://user-images.githubusercontent.com/40315079/211189731-7b5e876d-8b0c-4d5b-
 ## Todo
 
 - [ ] Publish npm
-- [ ] Tests
 
 ## Acknowledgments
 
