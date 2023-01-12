@@ -2,6 +2,7 @@
 
 import yargs from 'yargs/yargs'
 import { run } from './run'
+import chalk from 'chalk'
 
 const wireTsTemplate = `// example: export const providers = [FooRepository, FooService, FooController]
 export const providers = []`
@@ -42,12 +43,12 @@ yargs(process.argv.slice(2))
     '*',
     'resolve dependencies and generate',
     {
+      project: { alias: 'p', description: 'Path to the tsconfig file', default: './tsconfig.json' },
       input: {
         alias: 'i',
         description: 'Path to the file that has providers',
-        default: 'src/wire.ts',
+        default: 'src/wire.ts', // TODO Relative from tsconfig.json
       },
-      config: { alias: 'c', description: 'Path to the tsconfig file', default: './tsconfig.json' },
       output: {
         alias: 'o',
         description: 'Path to the output file',
@@ -55,11 +56,19 @@ yargs(process.argv.slice(2))
       },
     },
     async (argv) => {
-      const { performance } = await import('perf_hooks')
-      const start = performance.now()
-      run({ tsConfigFilePath: argv.config, inputFilePath: argv.input, outputFilePath: argv.output })
-      const end = performance.now()
-      console.log(`\n  Created: ${argv.output}\n  Done in ${end - start}ms`)
+      try {
+        const { performance } = await import('perf_hooks')
+        const start = performance.now()
+        run({
+          tsConfigFilePath: argv.project,
+          inputFilePath: argv.input,
+          outputFilePath: argv.output,
+        })
+        const end = performance.now()
+        console.log(`\n  Created: ${argv.output}\n  Done in ${end - start}ms`)
+      } catch (e: any) {
+        console.error(chalk.red(e))
+      }
     }
   )
   .alias({ h: 'help', v: 'version' }).argv

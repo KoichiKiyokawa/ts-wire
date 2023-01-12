@@ -28,12 +28,10 @@ jobs:
           cache: 'pnpm'
       - name: install dependencies
         run: pnpm install
-      - name: type check
-        run: pnpm tsc --noEmit
       - name: lint
         run: pnpm run lint:ci
-      # - name: build check
-      #   run: pnpm build
-      # - name: test
-      #   run: pnpm test
-      # - uses: codecov/codecov-action@v3.1.0
+      - name: build check (with type check)
+        run: pnpm build
+      - name: test
+        run: pnpm test:coverage
+      - uses: codecov/codecov-action@v3.1.0

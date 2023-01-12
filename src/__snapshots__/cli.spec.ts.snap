@@ -1,0 +1,63 @@
+// Vitest Snapshot v1
+
+exports[`cli help command snapshot test > --help 1`] = `
+"cli.ts
+
+resolve dependencies and generate
+
+コマンド:
+  cli.ts init  make a wire.ts
+  cli.ts       resolve dependencies and generate                    [デフォルト]
+
+オプション:
+  -p, --project  Path to the tsconfig file       [デフォルト: \\"./tsconfig.json\\"]
+  -i, --input    Path to the file that has providers [デフォルト: \\"src/wire.ts\\"]
+  -o, --output   Path to the output file   [デフォルト: \\"src/wire-generated.ts\\"]
+  -h, --help     ヘルプを表示                                             [真偽]
+  -v, --version  バージョンを表示                                         [真偽]
+"
+`;
+
+exports[`cli help command snapshot test > -h 1`] = `
+"cli.ts
+
+resolve dependencies and generate
+
+コマンド:
+  cli.ts init  make a wire.ts
+  cli.ts       resolve dependencies and generate                    [デフォルト]
+
+オプション:
+  -p, --project  Path to the tsconfig file       [デフォルト: \\"./tsconfig.json\\"]
+  -i, --input    Path to the file that has providers [デフォルト: \\"src/wire.ts\\"]
+  -o, --output   Path to the output file   [デフォルト: \\"src/wire-generated.ts\\"]
+  -h, --help     ヘルプを表示                                             [真偽]
+  -v, --version  バージョンを表示                                         [真偽]
+"
+`;
+
+exports[`cli help command snapshot test > generate command 1`] = `""`;
+
+exports[`cli help command snapshot test > init --help 1`] = `
+"cli.ts init
+
+make a wire.ts
+
+オプション:
+  -p, --path     Path to the creating file           [デフォルト: \\"src/wire.ts\\"]
+  -h, --help     ヘルプを表示                                             [真偽]
+  -v, --version  バージョンを表示                                         [真偽]
+"
+`;
+
+exports[`cli help command snapshot test > init -h 1`] = `
+"cli.ts init
+
+make a wire.ts
+
+オプション:
+  -p, --path     Path to the creating file           [デフォルト: \\"src/wire.ts\\"]
+  -h, --help     ヘルプを表示                                             [真偽]
+  -v, --version  バージョンを表示                                         [真偽]
+"
+`;

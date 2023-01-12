@@ -12,7 +12,7 @@ export function run({
 }) {
   const project = new Project({ tsConfigFilePath })
   const sourceFile = project.getSourceFile(inputFilePath)
-  if (sourceFile == null) throw Error('Source file not found')
+  if (sourceFile == null) throw Error(`Source file not found: ${inputFilePath}`)
 
   const providerIdentifiers = sourceFile
     .getVariableDeclaration('providers')
