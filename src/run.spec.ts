@@ -3,14 +3,16 @@ import { describe, expect, it } from 'vitest'
 import { run } from './run'
 
 describe('run', () => {
+  const generateOptionByFixtureName = (fixtureName: string): Parameters<typeof run>[0] => ({
+    tsConfigFilePath: `fixtures/${fixtureName}/tsconfig.json`,
+    inputFilePath: `fixtures/${fixtureName}/src/wire.ts`,
+    outputFilePath: `fixtures/${fixtureName}/src/wire-generated.ts`,
+  })
+
   it('normal', () => {
-    run({
-      tsConfigFilePath: 'fixtures/normal/tsconfig.json',
-      inputFilePath: 'fixtures/normal/src/wire.ts',
-      outputFilePath: 'fixtures/normal/src/wire-generated.ts',
-    })
-    expect(fs.readFileSync('fixtures/normal/src/wire-generated.ts', 'utf-8'))
-      .toMatchInlineSnapshot(`
+    const option = generateOptionByFixtureName('normal')
+    run(option)
+    expect(fs.readFileSync(option.outputFilePath, 'utf-8')).toMatchInlineSnapshot(`
       "import { FooRepository, db, BarRepository, FooService, FooController } from \\"./foo\\";
 
       const fooRepository = new FooRepository(db);
