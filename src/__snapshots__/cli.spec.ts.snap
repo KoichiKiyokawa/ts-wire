@@ -5,16 +5,16 @@ exports[`cli help command snapshot test > --help 1`] = `
 
 resolve dependencies and generate
 
-コマンド:
+Commands:
   cli.ts init  make a wire.ts
-  cli.ts       resolve dependencies and generate                    [デフォルト]
+  cli.ts       resolve dependencies and generate                       [default]
 
-オプション:
-  -p, --project  Path to the tsconfig file       [デフォルト: \\"./tsconfig.json\\"]
-  -i, --input    Path to the file that has providers [デフォルト: \\"src/wire.ts\\"]
-  -o, --output   Path to the output file   [デフォルト: \\"src/wire-generated.ts\\"]
-  -h, --help     ヘルプを表示                                             [真偽]
-  -v, --version  バージョンを表示                                         [真偽]
+Options:
+  -p, --project  Path to the tsconfig file          [default: \\"./tsconfig.json\\"]
+  -i, --input    Path to the file that has providers    [default: \\"src/wire.ts\\"]
+  -o, --output   Path to the output file      [default: \\"src/wire-generated.ts\\"]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]
 "
 `;
 
@@ -23,30 +23,28 @@ exports[`cli help command snapshot test > -h 1`] = `
 
 resolve dependencies and generate
 
-コマンド:
+Commands:
   cli.ts init  make a wire.ts
-  cli.ts       resolve dependencies and generate                    [デフォルト]
+  cli.ts       resolve dependencies and generate                       [default]
 
-オプション:
-  -p, --project  Path to the tsconfig file       [デフォルト: \\"./tsconfig.json\\"]
-  -i, --input    Path to the file that has providers [デフォルト: \\"src/wire.ts\\"]
-  -o, --output   Path to the output file   [デフォルト: \\"src/wire-generated.ts\\"]
-  -h, --help     ヘルプを表示                                             [真偽]
-  -v, --version  バージョンを表示                                         [真偽]
+Options:
+  -p, --project  Path to the tsconfig file          [default: \\"./tsconfig.json\\"]
+  -i, --input    Path to the file that has providers    [default: \\"src/wire.ts\\"]
+  -o, --output   Path to the output file      [default: \\"src/wire-generated.ts\\"]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]
 "
 `;
-
-exports[`cli help command snapshot test > generate command 1`] = `""`;
 
 exports[`cli help command snapshot test > init --help 1`] = `
 "cli.ts init
 
 make a wire.ts
 
-オプション:
-  -p, --path     Path to the creating file           [デフォルト: \\"src/wire.ts\\"]
-  -h, --help     ヘルプを表示                                             [真偽]
-  -v, --version  バージョンを表示                                         [真偽]
+Options:
+  -p, --path     Path to the creating file              [default: \\"src/wire.ts\\"]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]
 "
 `;
 
@@ -55,9 +53,9 @@ exports[`cli help command snapshot test > init -h 1`] = `
 
 make a wire.ts
 
-オプション:
-  -p, --path     Path to the creating file           [デフォルト: \\"src/wire.ts\\"]
-  -h, --help     ヘルプを表示                                             [真偽]
-  -v, --version  バージョンを表示                                         [真偽]
+Options:
+  -p, --path     Path to the creating file              [default: \\"src/wire.ts\\"]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]
 "
 `;

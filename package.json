@@ -8,8 +8,8 @@
     "ts-wire": "tsx src/index.ts",
     "lint": "prettier --write . && eslint --fix . --ignore-path .gitignore",
     "lint:ci": "prettier --check . && eslint . --ignore-path .gitignore",
-    "test": "vitest",
-    "test:coverage": "vitest --coverage"
+    "test": "LANG=C vitest",
+    "test:coverage": "pnpm test -- --coverage"
   },
   "keywords": [],
   "author": "",
