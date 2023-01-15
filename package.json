@@ -1,20 +1,26 @@
 {
-  "name": "ts-wire",
+  "name": "@kiyoshiro/ts-wire",
   "version": "0.0.1",
   "description": "TODO",
   "bin": "dist/cli.js",
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "ts-wire": "tsx src/index.ts",
     "lint": "prettier --write . && eslint --fix . --ignore-path .gitignore",
     "lint:ci": "prettier --check . && eslint . --ignore-path .gitignore",
     "test": "LANG=C vitest",
-    "test:coverage": "pnpm test -- --coverage"
+    "test:coverage": "pnpm test -- --coverage",
+    "prepublishOnly": "pnpm build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "private": true,
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "packageManager": "pnpm@7.24.3",
   "dependencies": {
     "chalk": "5.2.0",
