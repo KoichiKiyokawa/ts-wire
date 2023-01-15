@@ -4,7 +4,7 @@
   "description": "TODO",
   "bin": "dist/cli.js",
   "scripts": {
-    "build": "rm -rf && tsc",
+    "build": "rm -rf dist && tsc",
     "ts-wire": "tsx src/index.ts",
     "lint": "prettier --write . && eslint --fix . --ignore-path .gitignore",
     "lint:ci": "prettier --check . && eslint . --ignore-path .gitignore",
