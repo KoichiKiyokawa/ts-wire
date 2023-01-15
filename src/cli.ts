@@ -1,7 +1,6 @@
 #! /usr/bin/env node
 
 import yargs from 'yargs/yargs'
-import { run } from './run'
 import kleur from 'kleur'
 
 const wireTsTemplate = `// example: export const providers = [FooRepository, FooService, FooController]
@@ -59,6 +58,7 @@ yargs(process.argv.slice(2))
     },
     async (argv) => {
       try {
+        const { run } = await import('./run')
         const { performance } = await import('perf_hooks')
         const start = performance.now()
         run({
