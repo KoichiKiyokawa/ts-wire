@@ -1,7 +1,7 @@
 {
   "name": "@kiyoshiro/ts-wire",
   "version": "0.0.4",
-  "description": "Code-generation based DI, without decorators, based on ts-morph",
+  "description": "Code-generation based DI, without decorators",
   "repository": {
     "type": "git",
     "url": "https://github.com/KoichiKiyokawa/ts-wire"
