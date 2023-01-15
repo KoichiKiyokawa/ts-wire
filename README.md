@@ -17,7 +17,7 @@ https://user-images.githubusercontent.com/40315079/211189731-7b5e876d-8b0c-4d5b-
 
 ```sh
 npm i -D @kiyoshiro/ts-wire
-npx ts-wire init // Create `src/wire.ts`
+npx ts-wire init # Create `src/wire.ts`
 ```
 
 In `src/wire.ts`, you have to list values and classes you want to resolve dependencies.
