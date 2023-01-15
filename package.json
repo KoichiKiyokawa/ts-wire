@@ -23,7 +23,7 @@
   },
   "packageManager": "pnpm@7.24.3",
   "dependencies": {
-    "chalk": "5.2.0",
+    "kleur": "4.1.5",
     "ts-morph": "17.0.1",
     "yargs": "17.6.2"
   },

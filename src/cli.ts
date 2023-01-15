@@ -2,7 +2,7 @@
 
 import yargs from 'yargs/yargs'
 import { run } from './run'
-import chalk from 'chalk'
+import kleur from 'kleur'
 
 const wireTsTemplate = `// example: export const providers = [FooRepository, FooService, FooController]
 export const providers = []`
@@ -69,7 +69,7 @@ yargs(process.argv.slice(2))
         const end = performance.now()
         console.log(`\n  Created: ${argv.output}\n  Done in ${end - start}ms`)
       } catch (e: any) {
-        console.error(chalk.red(e))
+        console.error(kleur.red(e))
       }
     }
   )
