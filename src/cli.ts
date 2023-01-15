@@ -35,6 +35,8 @@ yargs(process.argv.slice(2))
         })
         if (answer !== 'y') return console.log('\n  Cancelled')
       }
+      const parentDir = argv.path.substring(0, argv.path.lastIndexOf('/'))
+      fs.mkdirSync(parentDir, { recursive: true })
       fs.writeFileSync(argv.path, wireTsTemplate)
       console.log(`\n  Created: ${argv.path}`)
     }

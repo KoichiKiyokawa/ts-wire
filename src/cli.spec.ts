@@ -14,7 +14,7 @@ describe('cli help command snapshot test', () => {
 
 describe('init command snapshot test', () => {
   beforeEach(() => {
-    fs.mkdirSync('tmp/src', { recursive: true })
+    fs.mkdirSync('tmp', { recursive: true })
   })
 
   afterEach(() => {
