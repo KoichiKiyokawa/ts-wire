@@ -32,18 +32,20 @@ export function run({
     })),
     {
       declarationKind: VariableDeclarationKind.Const,
-      isExported: true,
       declarations: [
         {
           name: 'leaves',
-          initializer: `[${graph
+          initializer: `{${graph
             .getLeafNodes()
             .map((n) => n.getName())
-            .join(', ')}]`,
+            .join(', ')}}`,
         },
       ],
     },
   ])
+
+  // add `export default leaves`
+  generatingFile.addExportAssignment({ expression: 'leaves', isExportEquals: false })
 
   generatingFile.fixMissingImports()
   generatingFile.saveSync()

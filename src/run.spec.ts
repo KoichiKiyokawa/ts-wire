@@ -19,7 +19,9 @@ describe('run', () => {
       const barRepository = new BarRepository(db);
       const fooService = new FooService(fooRepository, barRepository);
       const fooController = new FooController(fooService);
-      export const leaves = [fooController];
+      const leaves = {fooController};
+
+      export default leaves;
       "
     `)
   })
