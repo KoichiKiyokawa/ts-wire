@@ -1,6 +1,7 @@
 # ts-wire
 
 [![CI](https://github.com/KoichiKiyokawa/ts-wire/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/KoichiKiyokawa/ts-wire/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/@kiyoshiro%2Fts-wire.svg)](https://badge.fury.io/js/@kiyoshiro%2Fts-wire)
 [![codecov](https://codecov.io/github/KoichiKiyokawa/ts-wire/branch/main/graph/badge.svg?token=MHOGB70JUD)](https://codecov.io/github/KoichiKiyokawa/ts-wire)
 
 ## Features
