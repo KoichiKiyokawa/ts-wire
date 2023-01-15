@@ -4,6 +4,7 @@
   "description": "TODO",
   "bin": "dist/cli.js",
   "scripts": {
+    "prepare": "husky install",
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "ts-wire": "tsx src/index.ts",
     "lint": "prettier --write . && eslint --fix . --ignore-path .gitignore",
@@ -22,6 +23,14 @@
     "access": "public"
   },
   "packageManager": "pnpm@7.24.3",
+  "lint-staged": {
+    "*.{ts,yml,md,json}": [
+      "prettier --write"
+    ],
+    "*.{ts}": [
+      "eslint --fix"
+    ]
+  },
   "dependencies": {
     "kleur": "4.1.5",
     "ts-morph": "17.0.1",
@@ -35,7 +44,8 @@
     "@vitest/coverage-c8": "0.27.1",
     "eslint": "8.31.0",
     "eslint-config-prettier": "8.6.0",
-    "lefthook": "1.2.7",
+    "husky": "8.0.3",
+    "lint-staged": "13.1.0",
     "prettier": "2.8.2",
     "tsx": "3.12.2",
     "typescript": "4.9.4",
