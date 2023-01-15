@@ -2,3 +2,4 @@ pnpm-lock.yaml
 dist
 coverage
 fixtures
+*.snap

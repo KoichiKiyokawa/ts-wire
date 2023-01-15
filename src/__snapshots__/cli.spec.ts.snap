@@ -59,3 +59,14 @@ Options:
   -v, --version  Show version number                                   [boolean]
 "
 `;
+
+exports[`init command snapshot test > normal 1`] = `
+"
+  Created: tmp/src/wire.ts
+"
+`;
+
+exports[`init command snapshot test > normal 2`] = `
+"// example: export const providers = [FooRepository, FooService, FooController]
+export const providers = []"
+`;

@@ -2,6 +2,7 @@ pre-commit:
   parallel: true
   commands:
     format:
+      glob: '*.{ts,yml,md,json}'
       run: pnpm prettier --write {staged_files} && git add {staged_files}
     lint:
       glob: '*.ts'
