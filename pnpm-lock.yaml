@@ -7,7 +7,7 @@ specifiers:
   '@typescript-eslint/parser': 5.51.0
   '@vitest/coverage-c8': 0.28.4
   eslint: 8.33.0
-  eslint-config-prettier: 8.6.0
+  eslint-config-prettier: 9.1.0
   husky: 8.0.3
   kleur: 4.1.5
   lint-staged: 13.1.1
@@ -30,7 +30,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.51.0_4vsywjlpuriuw3tl5oq6zy5a64
   '@vitest/coverage-c8': 0.28.4
   eslint: 8.33.0
-  eslint-config-prettier: 8.6.0_eslint@8.33.0
+  eslint-config-prettier: 9.1.0_eslint@8.33.0
   husky: 8.0.3
   lint-staged: 13.1.1
   prettier: 2.8.4
@@ -1137,8 +1137,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-prettier/8.6.0_eslint@8.33.0:
-    resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
+  /eslint-config-prettier/9.1.0_eslint@8.33.0:
+    resolution: {integrity: sha512-NSWl5BFQWEPi1j4TjVNItzYV7dZXZ+wP6I6ZhrBGpChQhZRUaElihE9uRRkcbRnNb76UMKDF3r+WTmNcGPKsqw==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
