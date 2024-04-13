@@ -29,7 +29,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@7.27.0",
+  "packageManager": "pnpm@8.15.7",
   "lint-staged": {
     "*.{ts,yml,md,json}": [
       "prettier --write"
