@@ -11,7 +11,7 @@ specifiers:
   husky: 8.0.3
   kleur: 4.1.5
   lint-staged: 13.1.1
-  prettier: 2.8.4
+  prettier: 3.3.3
   ts-morph: 17.0.1
   tsx: 3.12.3
   typescript: 4.9.5
@@ -33,7 +33,7 @@ devDependencies:
   eslint-config-prettier: 8.6.0_eslint@8.33.0
   husky: 8.0.3
   lint-staged: 13.1.1
-  prettier: 2.8.4
+  prettier: 3.3.3
   tsx: 3.12.3
   typescript: 4.9.5
   vitest: 0.28.4
@@ -1917,9 +1917,9 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier/2.8.4:
-    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
-    engines: {node: '>=10.13.0'}
+  /prettier/3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
