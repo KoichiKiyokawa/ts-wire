@@ -29,7 +29,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@7.27.0",
+  "packageManager": "pnpm@7.33.7",
   "lint-staged": {
     "*.{ts,yml,md,json}": [
       "prettier --write"
@@ -41,21 +41,21 @@
   "dependencies": {
     "kleur": "4.1.5",
     "ts-morph": "17.0.1",
-    "yargs": "17.6.2"
+    "yargs": "17.7.2"
   },
   "devDependencies": {
-    "@types/node": "18.13.0",
-    "@types/yargs": "17.0.22",
-    "@typescript-eslint/eslint-plugin": "5.51.0",
-    "@typescript-eslint/parser": "5.51.0",
-    "@vitest/coverage-c8": "0.28.4",
-    "eslint": "8.33.0",
-    "eslint-config-prettier": "8.6.0",
+    "@types/node": "18.19.59",
+    "@types/yargs": "17.0.33",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "@vitest/coverage-c8": "0.33.0",
+    "eslint": "8.57.1",
+    "eslint-config-prettier": "8.10.0",
     "husky": "8.0.3",
-    "lint-staged": "13.1.1",
-    "prettier": "2.8.4",
-    "tsx": "3.12.3",
+    "lint-staged": "13.3.0",
+    "prettier": "2.8.8",
+    "tsx": "3.14.0",
     "typescript": "4.9.5",
-    "vitest": "0.28.4"
+    "vitest": "0.34.6"
   }
 }
